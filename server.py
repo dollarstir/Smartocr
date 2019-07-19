@@ -5,12 +5,16 @@ from flask import Flask, render_template, request
 from globalcode_ocr import glbcd
 
 # define a folder to store and later serve the images
+
+app = Flask(__name__)
+
+
 UPLOAD_FOLDER = '/static/uploads/'
 
 # allow files of a specific type
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
-app = Flask(__name__)
+
 
 # function to check the file extension
 def allowed_file(filename):
